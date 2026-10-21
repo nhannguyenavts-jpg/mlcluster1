@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phân Cụm Khách Hàng - Trang chủ</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; color: #333; }
+  header { background: #007bff; color: #fff; padding: 40px 30px; text-align: center; }
+  header h1 { margin: 0 0 8px; }
+  header p { margin: 0; opacity: .9; }
+  main { max-width: 960px; margin: 0 auto; padding: 30px 20px; }
+  h2 { color: #0066cc; }
+  .summary { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+  .box { flex: 1; min-width: 180px; background: #fff; padding: 18px; border-radius: 8px;
+         box-shadow: 0 1px 4px rgba(0,0,0,.15); text-align: center; }
+  .box .num { font-size: 32px; font-weight: bold; color: #007bff; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .card { display: block; text-decoration: none; color: #333; background: #fff; padding: 18px;
+          border-radius: 8px; border-top: 5px solid var(--c); box-shadow: 0 1px 4px rgba(0,0,0,.15);
+          transition: transform .15s; }
+  .card:hover { transform: translateY(-3px); }
+  .card-title { font-weight: bold; color: var(--c); }
+  .card-num { font-size: 30px; font-weight: bold; margin: 6px 0; }
+  .card-sub { color: #777; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+  th, td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; }
+  th { background: #007bff; color: #fff; }
+  tr:nth-child(even) { background: #f2f2f2; }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+  .cta { text-align: center; margin: 35px 0; }
+  .cta a { background: #007bff; color: #fff; padding: 14px 32px; border-radius: 30px;
+           text-decoration: none; font-size: 16px; }
+  .cta a:hover { opacity: .85; }
+  footer { text-align: center; color: #888; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Phân Cụm Khách Hàng (K-Means)</h1>
+  <p>Phân nhóm khách hàng theo Tuổi, Thu nhập hằng năm và Điểm chi tiêu</p>
+</header>
+<main>
+  <div class="summary">
+    <div class="box"><div class="num">200</div>Tổng số khách hàng</div>
+    <div class="box"><div class="num">4</div>Số cụm</div>
+  </div>
+
+  <h2>Các nhóm khách hàng</h2>
+  <div class="cards"><a class="card" style="--c:red" href="customer_clusters.html#cluster-0"><div class="card-title">Cluster 1</div><div class="card-num">48</div><div class="card-sub">24.0% khách hàng</div></a><a class="card" style="--c:green" href="customer_clusters.html#cluster-1"><div class="card-title">Cluster 2</div><div class="card-num">57</div><div class="card-sub">28.5% khách hàng</div></a><a class="card" style="--c:blue" href="customer_clusters.html#cluster-2"><div class="card-title">Cluster 3</div><div class="card-num">48</div><div class="card-sub">24.0% khách hàng</div></a><a class="card" style="--c:purple" href="customer_clusters.html#cluster-3"><div class="card-title">Cluster 4</div><div class="card-num">47</div><div class="card-sub">23.5% khách hàng</div></a></div>
+
+  <h2>Thống kê trung bình theo cụm</h2>
+  <table>
+    <tr><th>Cụm</th><th>Số lượng</th><th>Tuổi TB</th><th>Thu nhập TB</th><th>Điểm chi tiêu TB</th></tr>
+    <tr><td><span class="dot" style="background:red"></span>Cluster 1</td><td>48</td><td>55.7</td><td>54.8</td><td>48.2</td></tr><tr><td><span class="dot" style="background:green"></span>Cluster 2</td><td>57</td><td>30.2</td><td>66.1</td><td>82.4</td></tr><tr><td><span class="dot" style="background:blue"></span>Cluster 3</td><td>48</td><td>43.3</td><td>66.9</td><td>15.0</td></tr><tr><td><span class="dot" style="background:purple"></span>Cluster 4</td><td>47</td><td>27.6</td><td>53.3</td><td>49.1</td></tr>
+  </table>
+
+  <div class="cta"><a href="customer_clusters.html">Xem báo cáo chi tiết &rarr;</a></div>
+</main>
+<footer>Tạo tự động từ kết quả K-Means</footer>
+</body>
+</html>
